@@ -1,0 +1,123 @@
+.Wrap {
+  /* "display: flex" is for the buttons and title of the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /*vertically*/
+  align-items: center; /*horizontally*/
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.Wrap-S{
+  
+  background-image: url('./images/model-s.jpg');
+}
+.Wrap-3{
+    background-image: url('./images/model-3.jpg');
+
+}
+.Wrap-X{
+    background-image: url('./images/model-x.jpg');
+
+}
+.Wrap-Y{
+    background-image: url('./images/model-y.jpg');
+}
+.Wrap-SP{
+     background-image: url('./images/solar-panel.jpg');
+ 
+}
+.Wrap-SR{
+     background-image: url('./images/solar-roof.jpg');
+ 
+}
+.Wrap-acc{
+     background-image: url('./images/accessories.jpg');
+ 
+}
+
+.itemText {
+  padding-top: 15vh;
+  text-align: center;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.ButtonGroup {
+  display: flex;
+  margin-bottom: 2em;
+}
+.leftButton {
+  margin: 1em;
+  background-color: rgba(23, 26, 32, 0.8);
+  color: white;
+  height: 40px;
+  width: 256px;
+  border: 0;
+  /* I tried to remove the display,justify-content,align-items from the button selector and nothing changed so i think we can remove them */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+.rightButton {
+  margin: 1em;
+  background-color: white;
+  color: rgb(23, 26, 32);
+  height: 40px;
+  width: 256px;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+}
+.downArrow img {
+  height: 40px;
+  /*animateDown is a CSS function that we create*/
+  animation: animateDown infinite 1.5s;
+  overflow-x: hidden; /*because when our arrow moves it causes the scroll bar to show up*/
+}
+@keyframes animateDown {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(3px);
+  }
+  /* % of 1.5sec
+ 0->40% : (0,0)
+ 40% : 5px
+ 40->60% : (0,0)
+ 60% : 3px
+ 60->100% : (0,0)
+
+ */
+}
+
+
+@media (max-width:768px){
+ .ButtonGroup{
+  flex-direction: column;
+ }
+}
